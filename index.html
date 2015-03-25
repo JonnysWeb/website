@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Blank Space</title>
+  <script type="text/javascript" src = "https://code.jquery.com/jquery-2.1.3.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    background: #F5F5F5;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    min-height: 150vh;
+    padding: 3px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .divide {
+    background: url("hrlg.jpg") no-repeat scroll center top transparent;
+    height: 5px;
+    max-width: 100%;
+    flex-shrink: 1;
+  }
+  
+  .content {
+    margin: 35px 0;
+    padding: 50px 0;
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+  }
+  
+  .flexcont {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .flexchild {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-shrink: 1;
+  }
+  
+  .flexchild > img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media(max-width: 650px) {
+    .divide {
+    background: url("hr.jpg") no-repeat scroll center top transparent;
+    }
+  }
+  @media(max-width: 960px) {
+    .flexcont {
+      flex-wrap: wrap;
+      flex: 1;
+    }
+    
+    .flexchild {
+      padding:0;
+      padding-bottom: 20px;
+    }
+  }
+</style>
+<body>
+ <div class="container">
+  <div class="content">
+    <h1>Welcome to Blank Space</h1>
+    <p>A Simple Design Concept.</p>
+    <p>Responsive, Simple, Effective.</p>
+  </div>
+  <div class="divide"></div>
+  <div class="content">
+    
+    <div class="flexcont">
+      <div class="flexchild"><i class="fleximg fa fa-spinner fa-pulse fa-5x"></i></div>
+      <div class="flexchild"><p>Fast loading times dues to concise, object oriented markup and css. A single page design with inpage links also reduces the need to load all of your resources for every page on the site.</p></div>
+    </div>
+    
+  </div>
+  <div class="divide"></div>
+  <div class="content"></div>
+  <div class="divide"></div>
+  <div class="content"></div>
+  <div class="divide"></div>  
+  <div class="content"></div>
+ </div>
+ <script>
+  function LoopForever() {
+  var cw = $('.fleximage').width();
+    $('.fleximage').css({'height':cw+'px'});
+  };
+  var interval = self.setInterval(function(){LoopForever()},100); 
+ </script>
+</body>
+</html>
